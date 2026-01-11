@@ -34,8 +34,9 @@ if uploaded_files:
         with st.spinner("Searching documents and generating answer..."):
             answer, sources = answer_question(vectorstore, question)
 
-        st.subheader("Answer")
-        st.write(answer)
+        st.subheader("Answer (with inline citations)")
+        st.markdown(answer)
+
 
         with st.expander("Retrieved source fragments"):
             for i, doc in enumerate(sources):

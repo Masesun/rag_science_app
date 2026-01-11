@@ -1,0 +1,20 @@
+# UI
+streamlit>=1.31
+
+# Core RAG framework
+langchain>=0.2.10
+langchain-community>=0.2.10
+langchain-text-splitters>=0.2.0
+
+# Vector store
+faiss-cpu>=1.7.4
+
+# Embeddings
+sentence-transformers>=2.2.2
+
+# Document loaders
+pypdf>=4.0.0
+python-docx>=1.1.0
+
+# Utilities
+regex

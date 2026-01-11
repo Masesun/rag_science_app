@@ -20,6 +20,7 @@ if uploaded_files:
 
     with st.spinner("Building vector database (FAISS)..."):
         vectorstore, n_chunks = build_vectorstore(documents)
+        st.session_state["vectorstore"] = vectorstore
 
     st.success(f"Vector store ready ({n_chunks} chunks).")
 
@@ -32,7 +33,7 @@ if uploaded_files:
 
     if question:
         with st.spinner("Searching documents and generating answer..."):
-            answer, sources = answer_question(vectorstore, question)
+            answer, sources = answer_question(question)
 
         st.subheader("Answer (with inline citations)")
         st.markdown(answer)
